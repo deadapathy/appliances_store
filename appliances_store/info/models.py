@@ -7,5 +7,3 @@ class Users(models.Model):
     email = models.EmailField(max_length=50)
     telephone = models.IntegerField()
     password = models.TextField(max_length=10)
-
-
