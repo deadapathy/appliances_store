@@ -1,53 +1,73 @@
 body{
     background-color: #f7f7f7;
 }
-
-
+.collapse{
+    width: 700px;
+}
 .search{
-    width: 350px;
+    width: 550px;
     margin-left: 50px;
 }
-
 .h5{
     text-align: center;
 }
-
 .telephone{
     margin-right: 150px;
 }
-
 .basket{
-    height: 50px;
-    width: 70px;
-    text-align: center;
+    margin-right: 60px;
+    width: 110px;
+    height: 22px;
+    margin-top: -15px;
 }
-
+.basket-text{
+    margin-top: -25px;
+}
 .entrance{
-    height: 50px;
-    width: 70px;
+    margin-right: -45px;
+    width: 220px;
+    height: 20px;
+    margin-top: -5px;
 }
-
+.user-text{
+    margin-top: -25px;
+}
 .catalog{
-    margin-top: 50px;
+    margin-top: 60px;
+    
 }
 .group{
     margin-left: 270px;
     margin-top: -77px;
 }
 .delivery{
-    width: 100px;
-    font-size: 150%;
-    text-decoration: none;
+    width: 150px;
 }
 .payment{
-    width: 100px;
-    font-size: 150%;
+    margin-left: 5px;
+    width: 150px;
     text-decoration: none;
-    margin-left: 20px;
+    
+}
+.graph-work{
+    margin-left: 5px;
+}
+.hits{
+    margin-left: 5px;
 }
 .carousel{
     width: 936px;
     height: 404px;
     margin-left: 270px;
-    margin-top: -20px;
+    margin-top: 10px;
+
+}
+.list-menu{
+    width: 230px;
+    margin-left: -20px;
+}
+.menu{
+    width: 200px;
+    margin-left: 200px;
+    margin-top: 200px;
 }

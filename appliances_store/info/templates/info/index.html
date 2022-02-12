@@ -29,17 +29,17 @@
             <button class="btn btn-outline-success" type="submit">Поиск</button>
           </form>
         </div>
-        <p class="telephone h5">Телефон горячей линии:
-          <br> +7 (708) 164-76-80
-        </p>
+
         <div class="basket">
-          <a href="http://127.0.0.1:8000/team">
-            <img src="{% static 'img/shopping-cart.png' %}" alt="" width="35" height="35">
+          <a class="link-success" href="http://127.0.0.1:8000/team" style="text-decoration: none;">
+            <img src="{% static 'img/basket.png' %}" alt="" width="35" height="35">
+            <pre class="basket-text">     Корзина</pre>
           </a>
         </div>
         <div class="entrance">
-          <a href="http://127.0.0.1:8000/team">
-            <img src="{% static 'img/import.png' %}" alt="" width="35" height="35">
+          <a class="link-success" href="http://127.0.0.1:8000/team" style="text-decoration: none;">
+            <img src="{% static 'img/user.png' %}" alt="" width="30" height="30">
+            <pre class="user-text">     Вход или регистрация</pre>
           </a>
         </div>
       </div>
@@ -61,15 +61,23 @@
           <li><a class="dropdown-item btn-lg" href="#">Прочее</a></li>
         </ul>
       </div>
-      <div class="col-sm group btn-group">
-        <a href="#" class="delivery link-lg link-success">Доставка</a>
-        <a href="#" class="payment link-success">Оплата</a>
+      <div class="delivery col-sm group btn-group">
+        <button type="button" class=" btn btn-outline-success btn-lg">Доставка</button>
+      </div>
+      <div class="payment col-sm group btn-group">
+        <button type="button" class=" btn btn-outline-secondary btn-lg">Оплата</button>
+      </div>
+      <div class="graph-work col-sm group btn-group">
+        <button type="button" class=" btn btn-outline-success btn-lg">График работы</button>
+      </div>
+      <div class="hits col-sm group btn-group">
+        <button type="button" class=" btn btn-outline-secondary btn-lg">Хиты продаж</button>
       </div>
       <div id="carouselExampleSlidesOnly" class="col-sm-6 carousel slide" data-bs-ride="carousel"
         data-bs-interval="5000">
         <div class="col-sm carousel-inner">
           <div class="col-sm carousel-item active">
-            <img src="{% static 'img/slide1.jpg' %}" class="d-block w-100">
+            <img src="{% static 'img/slide1.png' %}" class="d-block w-100">
           </div>
           <div class="col-sm carousel-item">
             <img src="{% static 'img/slide2.png' %}" class="d-block w-100" alt="...">
@@ -86,7 +94,9 @@
 
 
   <footer>
-    <div class="container-xxl"></div>
+    <div class="container-xxl">
+
+    </div>
   </footer>
 </body>
 
