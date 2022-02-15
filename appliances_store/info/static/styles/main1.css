@@ -1,6 +1,7 @@
 body, html{
    background-color: #f7f7f7;
    height: 100%;
+   width: 100%;
 }
 
 .list-menu{
@@ -24,12 +25,10 @@ body, html{
 .carousel{
 	margin-top: -320px;
     margin-left: 250px;
-    height: 350px;
-    
-	
 }
 .carousel-1{
 	border-radius: 25px;
+	height: 450px;
 }
 li{
 	list-style-type: none;
@@ -41,7 +40,9 @@ a{
 	text-decoration: none;
 	color: #737171;
 }
-
+a:hover{
+	color: #198754;
+}
 .delivery{
 	font-size: 18px;
 	line-height: 24px;
@@ -77,6 +78,7 @@ a{
 	font-weight: 600;
     font-size: 18px;	
 	border: 0px;
+	color: #332a2d;
 }
 .dropdown-kitchen{
 	height: 300px;
@@ -132,10 +134,6 @@ a{
 	font-family: 'Courier New', Courier, monospace;
 }
 
-.top-seller{
-    margin-left: 150px;
-}
-
 
 .social-networks{
 	border: solid 1px black;
@@ -146,7 +144,7 @@ a{
 }
 .like{
 
-	font-size: 18px;
+	font-size: 20px;
 	line-height: 24px;
 	color: #198754;
 	font-weight: 600;
@@ -170,8 +168,15 @@ a{
 	color: #198754;
 	font-weight: 600;
 }
-
-
 .card{
 	border: none;
+}
+
+.telephone{
+	font-weight: 600;
+}
+.registr-text{
+	font-family: "MuseoSans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	margin-left: -50px;
 }
