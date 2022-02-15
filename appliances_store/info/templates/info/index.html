@@ -2,67 +2,271 @@
 <!DOCTYPE html>
 <html>
 
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>Интернет-магазин Бытовой тенхики</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <!-- Bootstrap icons-->
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link rel="stylesheet" href="{% static 'styles/main.css' %}">
-
-  <title>Интернет-магазин Бытовой тенхики</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Интернет-магазин Бытовой тенхики</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="stylesheet" href="{% static 'styles/main1.css' %}">
 </head>
 
 <body>
-  <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">All Products</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                    </ul>
+    <!-- Navigation-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#!">Магазин Бытовой тенхики</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="d-flex ms-5 w-100">
+                        <input class="form-control me-1" type="search" placeholder="Поиск" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Поиск</button>
+                    </form>
+                    <form class="d-flex w-100 ms-5" style="margin-left: px;">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Корзина
+                            <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
+                        </button>
+                        <button class="btn btn-outline-success ms-3" type="submit">
+                            <i class="bi bi-person-fill"></i>
+                            Войти или зарегестрироваться
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="py-1">
+        <div class="container px-4 px-lg-5 my-5">
+            <ul class="list-menu me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li>
+                    <a href="#">
+                        <button class="category-btn btn btn-outline-success dropdown-toggle">
+                            Все категории
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a class="delivery" href="#"> Доставка </a>
+                </li>
+                <li>
+                    <a class="payment" href="">Оплата</a>
+                </li>
+                <li>
+                    <a class="graph-work" href="#">График работы</a>
+                </li>
+                <li>
+                    <a class="hits" href="#">Хиты продаж</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-dark" type="submit">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </button>
-            </form>
-        </div>
-    </div>
-</nav>
-<!-- Header-->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-4 fw-bolder">Shop in style</h1>
-            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-        </div>
-    </div>
-</header>
+            <div class="drop-menu-vertical ">
+                <div class="btn-group-vertical">
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Товары для кухни
+                        </button>
+                        <ul class="dropdown-kitchen dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Холодильники</a></li>
+                            <li><a class="dropdown-item" href="#">Микроволновки</a></li>
+                            <li><a class="dropdown-item" href="#">Плиты</a></li>
+                            <li><a class="dropdown-item" href="#">Чайники</a></li>
+                            <li><a class="dropdown-item" href="#">Кофеварки</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Посуда
+                        </button>
+                        <ul class="dropdown-dishes dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Сквороды</a></li>
+                            <li><a class="dropdown-item" href="#">Кастрюли</a></li>
+                            <li><a class="dropdown-item" href="#">Кухонные принадлежности</a></li>
+                            <li><a class="dropdown-item" href="#">Посуда для сервировки</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Техника для дома
+                        </button>
+                        <ul class="dropdown-forhome dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Пылесос</a></li>
+                            <li><a class="dropdown-item" href="#">Стиральные машины</a></li>
+                            <li><a class="dropdown-item" href="#">Утюги</a></li>
+                            <li><a class="dropdown-item" href="#">Телефоны</a></li>
+                            <li><a class="dropdown-item" href="#">Водонагреватели</a></li>
+                            <li><a class="dropdown-item" href="#">Уход за одеждой</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Красота и здоровье
+                        </button>
+                        <ul class="dropdown-health dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Весы</a></li>
+                            <li><a class="dropdown-item" href="#">Электробритвы</a></li>
+                            <li><a class="dropdown-item" href="#">Фены</a></li>
+                            <li><a class="dropdown-item" href="#">Уход за полостью рта</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Инструменты
+                        </button>
+                        <ul class="dropdown-instruments dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Дрели</a></li>
+                            <li><a class="dropdown-item" href="#">Перфораторы</a></li>
+                            <li><a class="dropdown-item" href="#">Шлифовальные машины</a></li>
+                            <li><a class="dropdown-item" href="#">Электролобзики, пилы</a></li>
+                            <li><a class="dropdown-item" href="#">Инструменты</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group dropend">
+                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Прочее
+                        </button>
+                        <ul class="dropdown-another dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Лампы</a></li>
+                            <li><a class="dropdown-item" href="#">Фонари</a></li>
+                            <li><a class="dropdown-item" href="#">Батарейки, зарядные устройства</a></li>
+                            <li><a class="dropdown-item" href="#">Чистящие средства</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-  
+            </div>
+
+            <div id="carousel carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-1 carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'img/slide1.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/slide2.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'img/slide3.png' %}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="top-seller">
+        <div class="container px-4 px-lg-5 mt-5">
+            <p class="like h-auto">
+                Вам может понравиться:
+            </p>
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-auto">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00 - $80.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00 - $80.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00 - $80.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <!-- Product image-->
+                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                        <!-- Product details-->
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <!-- Product price-->
+                                $40.00 - $80.00
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-white">
+        <div class="container"><p class="m-0 text-center text-dark">Copyright &copy; Your Website 2021</p></div>
+    </footer>
 
 </body>
 
