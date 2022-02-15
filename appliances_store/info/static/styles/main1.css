@@ -1,5 +1,5 @@
 body, html{
-   background-color: #f7f7f7;
+   background-color: red;
    height: 100%;
 }
 
@@ -39,6 +39,7 @@ li{
 }
 a{
 	text-decoration: none;
+	color: #737171;
 }
 
 .delivery{
@@ -54,9 +55,7 @@ a{
 	color: #737171;
 	font-weight: 600;
 }
-a:hover{
-	color: #198754;
-}
+
 .graph-work{
 	font-size: 18px;
 	line-height: 24px;

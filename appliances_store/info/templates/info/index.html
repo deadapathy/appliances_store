@@ -18,7 +18,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="{% static 'styles/main1.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main1.css'  %}">
 </head>
 
 <body>
@@ -182,21 +182,25 @@
                 <div class="col mb-5">
                     <div class="card h-auto">
                         <!-- Product image-->
-                        <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name-->
-                                <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price-->
-                                $40.00 - $80.00
+                        <a href="">
+                            <img class="card-img-top" src="{% static 'img/for-kitchen/plate/Hansa FCMW-58049.jpg' %}"
+                                alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">Плита Hansa FCMW-58049</h5>
+                                    <!-- Product price-->
+                                    169 932 тг.
+                                </div>
                             </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a>
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View
+                                        options</a>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col mb-5">
@@ -265,7 +269,9 @@
     </section>
 
     <footer class="py-5 bg-white">
-        <div class="container"><p class="m-0 text-center text-dark">Copyright &copy; Your Website 2021</p></div>
+        <div class="container">
+            <p class="m-0 text-center text-dark">Copyright &copy; Your Website 2021</p>
+        </div>
     </footer>
 
 </body>
