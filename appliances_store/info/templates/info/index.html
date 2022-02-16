@@ -19,7 +19,7 @@
         crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/main1.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 
 <body>
@@ -58,11 +58,9 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="." method="post">
-                                            {{ form.as_p }}
-                                            {% csrf_token %}
+                                        <form action="{% url 'account_login' %}" method="POST" class="login">
                                             <div class="mb-3">
-
+                                                
                                                 <label class="form-label">Адрес электронной почты</label>
                                                 <input type="text" class="form-control" id="username" name="username"
                                                     placeholder="" />
@@ -74,11 +72,12 @@
                                             </div>
                                             <div class="modal-footer d-block">
                                                 <p class="float-start">Нет аккаунта? <a
-                                                        href="http://127.0.0.1:8000/registration/">Регистрация</a>
+                                                        href="http://127.0.0.1:8000/register/">Регистрация</a>
                                                 </p>
-                                                <p><input type="submit" value="Log-in" class="bnt btn-outline-success">
-                                                </p>
+                                                <button class="btn btn-outline-success ms-5 primaryAction"
+                                                    type="submit"> Вход</button>
                                             </div>
+                                        </form>
                                     </div>
                     </form>
                 </div>
