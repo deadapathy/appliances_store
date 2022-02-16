@@ -18,7 +18,8 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link rel="stylesheet" href="{% static 'styles/main1.css'  %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/main1.css' %}">
 </head>
 
 <body>
@@ -75,7 +76,8 @@
                                                 <p class="float-start">Нет аккаунта? <a
                                                         href="http://127.0.0.1:8000/registration/">Регистрация</a>
                                                 </p>
-                                                <p><input type="submit" value="Log-in"></p>
+                                                <p><input type="submit" value="Log-in" class="bnt btn-outline-success">
+                                                </p>
                                             </div>
                                     </div>
                     </form>
