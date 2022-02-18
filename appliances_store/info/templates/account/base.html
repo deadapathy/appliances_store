@@ -18,7 +18,7 @@
       crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/main1.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
   </head>
 </head>
 
@@ -74,24 +74,14 @@
       </div>
     </nav>
   </header>
-  {% if messages %}
-  <div>
-    <strong>Messages:</strong>
-    <ul>
-      {% for message in messages %}
-      <li>{{message}}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+  
 
   {% block content %}
 
   {% endblock %}
-  {% endblock %}
-  {% block extra_body %}
-
-  {% endblock %}
+  <div class="space container">
+    
+  </div>
   <footer class="py-3 bg-white mt-5">
     <div class="container">
       <p class="telephone m-2 text-center text-dark">Горячая линия:
@@ -100,6 +90,12 @@
       </p>
     </div>
   </footer>
+  {% endblock %}
+  {% block extra_body %}
+
+  {% endblock %}
+
+
 
 </body>
 

@@ -6,16 +6,53 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container px-4 px-lg-5 my-5">
-  <h1>{% trans "Sign Up" %}</h1>
+<section class="py-1">
+  <div class="container px-4 px-lg-5 my-5">
+    <ul class="list-menu me-auto mb-2 mb-lg-0 ms-lg-4">
+      <li>
+        <div class="btn-group">
+          <button class="category-btn btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Все категории
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Действие</a></li>
+            <li><a class="dropdown-item" href="#">Другое действие</a></li>
+            <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <a class="delivery" href="#"> Доставка </a>
+      </li>
+      <li>
+        <a class="payment" href="">Оплата</a>
+      </li>
+      <li>
+        <a class="graph-work" href="#">График работы</a>
+      </li>
+      <li>
+        <a class="hits" href="#">Хиты продаж</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-  </form>
-</div>
+<section class="registr">
+  <div class="container px-4 px-lg-5 my-5">
+    <h2 class="registr-text h-auto px-4 px-lg-5 my-3">
+      Регистрация:
+    </h2>
+
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <button class="btn btn-outline-success" type="submit">{% trans "Sign Up" %}</button>
+    </form>
+  </div>
+</section>
+
 {% endblock %}
