@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 
+
 def home(request):
     return render(request, 'info/index.html')
 
@@ -27,4 +28,3 @@ def contacts(request):
     time = {"worktime" : "24/7"}
     data = {"header": header, "user": user, "time": time}
     return render(request, 'info/contacts.html', context=data)
-
