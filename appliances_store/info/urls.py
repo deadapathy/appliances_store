@@ -1,7 +1,7 @@
 from atexit import register
 from unicodedata import name
 from django.urls import path, include, re_path
-from .views import ProjectInfo, contacts, home, team
+from .views import ProjectInfo, contacts, home, team, cart
 from . import views
 
 
@@ -11,4 +11,5 @@ urlpatterns = [
     path('ProjectInfo/', ProjectInfo),
     path('team/', team),
     path('contacts/', contacts),
+    path('cart/', cart),
 ]

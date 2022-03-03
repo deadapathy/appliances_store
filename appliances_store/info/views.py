@@ -28,3 +28,6 @@ def contacts(request):
     time = {"worktime" : "24/7"}
     data = {"header": header, "user": user, "time": time}
     return render(request, 'info/contacts.html', context=data)
+
+def cart(request):
+    return render(request, 'info/cart.html')
