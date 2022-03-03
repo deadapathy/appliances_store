@@ -3,10 +3,11 @@ from re import template
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-
+from .models import Product
 
 def home(request):
-    return render(request, 'info/index.html')
+    products = Product.objects.filter(is_active=True)
+    return render(request, 'info/index.html', locals())
 
 def ProjectInfo(request):
     return render(request, 'info/infoProject.html')
