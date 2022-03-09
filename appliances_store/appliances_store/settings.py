@@ -143,13 +143,18 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static"]
+
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'info/static/'
+
 
 LOGIN_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1

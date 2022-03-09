@@ -1,5 +1,5 @@
 body, html{
-   background-color: red;
+   background-color: #f7f7f7;
    height: 100%;
    width: 100%;
 }
@@ -182,8 +182,34 @@ a:hover{
 }
 
 .space{
-	height: 185px;
+	height: 50px;
 }
 .space-for-logout{
 	height: 280px;
+}
+.product-item{
+	height: 470px;
+	background-color: white;
+	position: relative;
+	text-align: center;
+	border: 1px solid lightgrey;
+}
+.add-to-cart-btn{
+	position: absolute;
+	bottom: 15px;
+	left: 32%;
+}
+.product-name{
+	margin-top: 35px;
+}
+.item-name{
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 40px;
+	letter-spacing: .03em;
+}
+.description{
+	margin-left: 350px;
+	margin-bottom: 200px;
+	width: 100px;
 }
