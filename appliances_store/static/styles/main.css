@@ -213,3 +213,14 @@ a:hover{
 	margin-bottom: 200px;
 	width: 100px;
 }
+.basket-container{
+	position: relative;
+	width: 200px;
+	padding: 15px 10px;
+}
+.basket-items{
+	position: absolute;
+	top: 50px;
+	width: 450px;
+	z-index: 10;
+}

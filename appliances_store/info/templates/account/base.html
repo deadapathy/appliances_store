@@ -18,6 +18,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"></script>
     <script src="{% static 'scripts/scale.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
   </head>
 
@@ -36,14 +37,18 @@
             <input class="form-control me-1" type="search" placeholder="Поиск" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Поиск</button>
           </form>
-          <form class="d-flex w-25 ms-5" style="margin-left: px;">
-            <button class="btn btn-outline-success">
-              <i class="bi-cart-fill me-1"></i>
-              Корзина
-              <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
-            </button>
 
+          <form class="d-flex w-25 ms-5">
+            <div class="basket-container">
+              <a href="#"> <i class="bi-cart-fill me-1"></i> Корзина <span id="basket_total_nmb"></span></a>
+              <div class="basket-items bg-white d-none">
+                <ul class="">
+                  <li></li>
+                </ul>
+              </div>
+            </div>
           </form>
+
           <form class="d-flex w-50">
             <ul class="h-25 mt-2">
               <li class="ms-5 w-100">
@@ -148,7 +153,9 @@
 
   {% endblock %}
 
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
+  <script src="{% static 'js/scripts.js' %}"></script>
 
 </body>
 
