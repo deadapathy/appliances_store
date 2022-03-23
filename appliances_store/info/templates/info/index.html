@@ -1,3 +1,4 @@
+{% extends "account/base.html" %}
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -15,88 +16,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="{% static 'scripts/scale.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 
 <body>
-    <!-- Navigation-->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container px-4 px-lg-5 my-1">
-                <a class="navbar-brand" href="/">Магазин Бытовой тенхики</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex ms-5 w-75">
-                        <input class="form-control me-1" type="search" placeholder="Поиск" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
-                    <form class="d-flex w-25 ms-5" style="margin-left: px;">
-                        <button class="btn btn-outline-success">
-                            <i class="bi-cart-fill me-1"></i>
-                            Корзина
-                            <span class="badge bg-success text-white ms-1 rounded-pill">0</span>
-                        </button>
-
-                    </form>
-                    <form class="d-flex w-50">
-                        <ul class="h-25 mt-2">
-                            <li class="ms-5 w-100">
-                                {% if user.is_authenticated %}
-                                <span class="me-3">{{ user.username }}</span>
-                                <a href="{% url 'account_logout' %}"
-                                    style="color: #198754; font-weight: 700; text-transform: uppercase;">
-                                    Выход
-                                </a>
-                                {% else %}
-                                <a href="{% url 'account_login' %}"
-                                    style="color: #198754; font-weight: 700; text-transform: uppercase;">
-                                    Вход</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'account_signup' %}"
-                                    style="color: #198754; font-weight: 700; text-transform: uppercase;">
-                                    Регистрация</a>
-                                {% endif %}
-                            </li>
-                        </ul>
-                    </form>
-                </div>
-            </div>
-            </div>
-            </div>
-            </form>
-            </div>
-            </div>
-        </nav>
-    </header>
-
+    {% block content%}
     <section class="py-1">
         <div class="container px-4 px-lg-5 my-5">
-            <ul class="list-menu me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
                     <a href="#">
-                        <button class="category-btn btn btn-outline-success dropdown-toggle">
+                        <button class="category-btn btn btn-outline-success dropdown-toggle ms-1">
                             Все категории
                         </button>
                     </a>
-                </li>
-                <li>
-                    <a class="delivery" href="#"> Доставка </a>
-                </li>
-                <li>
-                    <a class="payment" href="">Оплата</a>
-                </li>
-                <li>
-                    <a class="graph-work" href="#">График работы</a>
-                </li>
-                <li>
-                    <a class="hits" href="#">Хиты продаж</a>
-                </li>
-            </ul>
+                    <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="delivery me-3" href="#"> Доставка </a>
+                            <a class="payment me-3" href="">Оплата</a>
+                            <a class="graph-work me-3" href="#">График работы</a>
+                            <a class="hits me-3" href="#">Хиты продаж</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
             <div class="drop-menu-vertical ">
                 <div class="btn-group-vertical">
                     <div class="btn-group dropend">
@@ -223,78 +167,7 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Footer -->
-    <footer class="footer text-center text-lg-start bg-white text-muted">
-        <!-- Section: Social media -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <!-- Left -->
-            <div class="me-5 d-none d-lg-block">
-                <span>Мы в социальных сетях:</span>
-            </div>
-            <!-- Left -->
-
-            <!-- Right -->
-            <div>
-                <a href="https://vk.com/xuyakushka667" class="me-4 text-reset">
-                    <i class="bi bi-vimeo"></i>
-                </a>
-                <a href="https://t.me/deadapathy" class="me-4 text-reset">
-                    <i class="bi bi-telegram"></i>
-                </a>
-                <a href="https://github.com/deadapathy" class="me-4 text-reset">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-            <!-- Right -->
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Links  -->
-        <section class="">
-            <div class="container mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                    <!-- Grid column -->
-                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ms-5">
-                        <!-- Content -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Магазин Бытовой техники
-                        </h6>
-                        <p style="width:330px;">
-                            Главная цель онлайн-магазина – улучшение качества жизни клиентов.
-                        </p>
-                    </div>
-                    <!-- Grid column -->
-
-                    <!-- Grid column -->
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">
-                            Контакты
-                        </h6>
-                        <p><i class="bi bi-house-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;Алматы, ул. Ахтанова 55</p>
-                        <p><i class="bi bi-envelope-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;maksvaskov01@gmail.com</p>
-                        <p><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;+ 7 708 164 76 80</p>
-                        <p><i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp;+ 7 706 406 72 28</p>
-                    </div>
-                    <!-- Grid column -->
-                </div>
-                <!-- Grid row -->
-            </div>
-        </section>
-        <!-- Section: Links  -->
-
-    </footer>
-    <!-- Footer -->
-
+    {% endblock %}
 </body>
 
 </html>

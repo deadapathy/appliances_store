@@ -13,36 +13,41 @@ $(document).ready(function () {
         var product_price = submit_btn.data("price");
         console.log(product_id);
         console.log(product_name);
-        $('.basket-items ul').append('<li>' + product_name + ', ' + nmb + 'шт. ' + 'по ' + product_price + '₸  ' +
-            '<a class="delete-item" href="">x</a>' +
-            '</li>');
 
+       
+            var data = {};
+            data.product_id = product_id;
+            data.nmb = nmb;
+            var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+            data["csrfmiddlewaretoken"] = csrf_token;
 
-        var data = {};
-        data.product_id = product_id;
-        data.nmb = nmb;
-        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
-        data["csrfmiddlewaretoken"] = csrf_token;
+            var url = form.attr("action");
 
-        var url = form.attr("action");
-
-        console.log(data)
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: data,
-            cache: true,
-            success: function (data) {
-                console.log("OK");
-                console.log(data.products_total_nmb)
-                if (data.basket_total_nmb) {
-                    $('#basket_total_nmb').text("("+data.basket_total_nmb+")");
+            console.log(data)
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                cache: true,
+                success: function (data) {
+                    console.log("OK");
+                    console.log(data.products_total_nmb)
+                    if(data.basket_total_nmb)
+                    $('#basket_total_nmb').text("("+data.products_total_nmb+")");
+                    console.log(data.products);
+                    $('.basket-items ul').html("")
+                    $.each(data.products, function(k, v){
+                        $('.basket-items ul').append('<li>' + v.name + ', ' + v.nmb + 'шт. ' + 'по ' + v.price + '₸  ' +
+                        //'<a class="delete-item" href="">x</a>' +
+                        '</li>');
+                    });
+                },
+                error: function () {
+                    console.log("error")
                 }
-            },
-            error: function () {
-                console.log("error")
-            }
-        })
+            })
+
+       
     });
 
     function showingBasket() {

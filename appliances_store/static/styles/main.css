@@ -32,9 +32,6 @@ body, html{
 }
 li{
 	list-style-type: none;
-	display: inline;
-	margin-right: 15px;
-	padding: 0 4px;
 }
 a{
 	text-decoration: none;
