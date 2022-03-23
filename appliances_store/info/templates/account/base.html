@@ -57,9 +57,9 @@
             </div>
           </form>
 
-          <form class="d-flex w-50">
-            <ul class="h-25 mt-2">
-              <li class="ms-5 w-100">
+          <form class="d-flex w-100">
+            <ul class="h-25 mb-1 d-flex">
+              <li class="w-100 me-3">
                 {% if user.is_authenticated %}
                 <span class="me-3">{{ user.username }}</span>
                 <a href="{% url 'account_logout' %}"
