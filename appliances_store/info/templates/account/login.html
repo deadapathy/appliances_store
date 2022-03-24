@@ -25,52 +25,43 @@
 {% block content %}
 <section class="py-1">
   <div class="container px-4 px-lg-5 my-5">
-    <ul class="list-menu me-auto mb-2 mb-lg-0 ms-lg-4">
-      <li>
-        <div class="btn-group">
-          <button class="category-btn btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a href="#">
+          <button class="category-btn btn btn-outline-success dropdown-toggle ms-1">
             Все категории
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Действие</a></li>
-            <li><a class="dropdown-item" href="#">Другое действие</a></li>
-            <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
-          </ul>
+        </a>
+        <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="delivery me-3" href="#"> Доставка </a>
+            <a class="payment me-3" href="">Оплата</a>
+            <a class="graph-work me-3" href="#">График работы</a>
+            <a class="hits me-3" href="#">Хиты продаж</a>
+          </div>
         </div>
-      </li>
-      <li>
-        <a class="delivery" href="#"> Доставка </a>
-      </li>
-      <li>
-        <a class="payment" href="">Оплата</a>
-      </li>
-      <li>
-        <a class="graph-work" href="#">График работы</a>
-      </li>
-      <li>
-        <a class="hits" href="#">Хиты продаж</a>
-      </li>
-    </ul>
-  </div>
-</section>
+      </div>
+    </nav>
 
-<section class="login">
-  <div class="container px-4 px-lg-5 my-5">
-    <h2 class="registr-text h-auto px-4 px-lg-5 my-3">
-      Вход
-    </h2>
-    <p>{% blocktrans %}Если у вас ещё нет аккаунта, тогда
-      <a href="{{ signup_url }}">зарегестрируйтесь</a>.{% endblocktrans %}
-    </p>
-    <form class="login" method="POST" action="{% url 'account_login' %}">
-      {% csrf_token %}
-      {{ form.as_p }}
-      {% if redirect_field_value %}
-      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-      {% endif %}
-      <button class="btn btn-outline-success mt-3" type="submit">{% trans "Sign In" %}</button>
-    </form>
+
+    <section class="login">
+      <div class="container px-4 px-lg-5 my-5">
+        <h2 class="registr-text h-auto px-4 px-lg-5 my-3">
+          Вход
+        </h2>
+        <p>{% blocktrans %}Если у вас ещё нет аккаунта, тогда
+          <a href="{{ signup_url }}">зарегестрируйтесь</a>.{% endblocktrans %}
+        </p>
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-outline-success mt-3" type="submit">{% trans "Sign In" %}</button>
+        </form>
+      </div>
+    </section>
   </div>
 </section>
 {% endblock %}

@@ -42,15 +42,15 @@
               <a href="#"> <i class="bi-cart-fill me-1"></i> Корзина <span id="basket_total_amount"></span><span
                   id="basket_total_nmb">
                   {% if products_total_nmb %}
-                  ({{ products_total_nmb }})
+                      ({{ products_total_nmb }})
                   {% else %}
-                  (0)
+                      (0)
                   {% endif %}
                 </span></a>
               <div class="basket-items bg-white d-none">
                 <ul class="">
                   {% for products_in_basket in products_in_basket %}
-                  <li>{{ products_in_basket.product.name }} {{ products_in_basket.nmb }} шт. за {{ products_in_basket.price_per_item }} ₸ </li>
+                  <li>{{ products_in_basket.product.name }} {{ products_in_basket.nmb }} шт. за {{ products_in_basket.total_price }} ₸ </li>
                   {% endfor %}
                 </ul>
               </div>
@@ -86,7 +86,6 @@
 
 
   {% block content %}
-
   {% endblock %}
   <footer class="footer text-center text-lg-start bg-white text-muted">
     <!-- Section: Social media -->

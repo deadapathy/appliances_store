@@ -50,22 +50,22 @@ $(document).ready(function () {
        
     });
 
-    function showingBasket() {
-        $('.basket-items').removeClass('d-none');
-    };
+    // function showingBasket() {
+    //     $('.basket-items').removeClass('d-none');
+    // };
 
     $('.basket-container').on('click', function (e) {
         e.preventDefault();
-        showingBasket();
+        $('.basket-items').removeClass('d-none');
     });
 
     $('.basket-container').mouseover(function () {
-        showingBasket();
+        $('.basket-items').removeClass('d-none');
     });
 
-    // $('.basket-container').mouseout(function(){
-    //     showingBasket();
-    // });
+    $('.basket-container').mouseout(function(){
+        $('.basket-items').addClass('d-none');
+     });
 
     $(document).on('click', '.delete-item', function (e) {
         e.preventDefault();
