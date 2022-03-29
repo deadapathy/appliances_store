@@ -1,0 +1,162 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container">
+        <main>
+            <div class="py-3 text-center">
+            </div>
+            <div class="row g-5">
+                <div class="col-md-5 col-lg-4 order-md-last ">
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-success">Корзина</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        {% for product_in_basket in products_in_basket %}
+                        <li class="list-group-item d-flex justify-content-between lh-sm">
+                            <div class="">
+                                <h6 class="my-0">{{ product_in_basket.product.name }}</h6>
+                                <div class="py-2"></div>
+                                <small class="text-muted">Количество: {{ product_in_basket.nmb }}</small>
+                            </div>
+
+                            <span class="total-product-in-basket-amount text-muted">{{ product_in_basket.total_price }}
+                                ₸</span>
+                        </li>
+                        {% endfor %}
+                        <div class="text-right py-2 ms-2">
+                            <h6 class=""> Общая стоимость: <span class="ms-3" id="total_order_amount"></span></h6>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">Оформление заказа</h4>
+                    <form class="needs-validation">{% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <label for="firstName" class="form-label">Имя</label>
+                                <input type="text" class="form-control" placeholder="" value="" required="">
+                                <div class="invalid-feedback">
+                                    Введите действительное имя
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <label for="lastName" class="form-label">Фамилия</label>
+                                <input type="text" class="form-control" placeholder="" value="" required="">
+                                <div class="invalid-feedback">
+                                    Введите действительную фамилию
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="telephone" class="form-label">Телефон</label>
+                                <input type="text" class="form-control" placeholder="" value="" required="">
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label">Email <span class="text-muted">(не
+                                        обязательно)</span></label>
+                                <input type="email" class="form-control" placeholder="you@example.com">
+                                <div class="invalid-feedback">
+                                    Введите корректный Email
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label">Адрес</label>
+                                <input type="text" class="form-control" placeholder="" required="">
+                            </div>
+
+                            <div class="col-md-5">
+                                <label for="country" class="form-label">Страна</label>
+                                <select class="form-select" required="">
+                                    <option value="">Выбрать...</option>
+                                    <option>Казахстан</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="state" class="form-label">Город</label>
+                                <select class="form-select" required="">
+                                    <option value="">Выбрать...</option>
+                                    <option>Алматы</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="zip" class="form-label">Почтовый индекс</label>
+                                <input type="text" class="form-control" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Введите действительный почтовый индекс
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+
+                        <h4 class="mb-3">Оплата</h4>
+
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
+                                    required>
+                                <label class="form-check-label" for="credit">Кредитная карта</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="cash" name="paymentMethod" type="radio" class="form-check-input" required>
+                                <label class="form-check-label" for="cash">Наличными</label>
+                            </div>
+                        </div>
+
+                        <div class="row gy-3">
+                            <div class="col-md-6">
+                                <label for="cc-name" class="form-label">Имя на карте</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                                
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="cc-number" class="form-label">Номер карты</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                               
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="cc-expiration" class="form-label">Срок действия</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Expiration date required
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="cc-cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                                <div class="invalid-feedback">
+                                    Security code required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-3"></div>
+                        <button class="w-100 btn btn-success btn-lg" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"> Оформить
+                            заказ</button>
+
+                        <div class="py-5"></div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<script src="{% static 'js/scripts.js' %}"></script>

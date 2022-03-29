@@ -16,7 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 
@@ -26,29 +25,29 @@
         <div class="container px-4 px-lg-5 my-5">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
-                    <a href="#">
-                        <button class="category-btn btn btn-outline-success dropdown-toggle ms-1">
+                    <a href="{% url 'category' %}">
+                        <button class=" btn btn-success dropdown-toggle ms-3" style="font-weight: 700;">
                             Все категории
                         </button>
                     </a>
-                    <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+                    <div class="collapse navbar-collapse ms-5" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="delivery me-3" href="#"> Доставка </a>
-                            <a class="payment me-3" href="">Оплата</a>
-                            <a class="graph-work me-3" href="#">График работы</a>
-                            <a class="hits me-3" href="#">Хиты продаж</a>
+                            <a class="delivery me-3" href="{% url 'delivery' %}"> Доставка </a>
+                            <a class="payment me-3" href="{% url 'payment' %}">Оплата</a>
+                            <a class="graph-work me-3" href="{% url 'graph-work' %}">График работы</a>
+                            <a class="hits me-3" href="#hits">Хиты продаж</a>
                         </div>
                     </div>
                 </div>
             </nav>
-            <div class="drop-menu-vertical ">
+            <div class="drop-menu-vertical w-auto ms-2">
                 <div class="btn-group-vertical">
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Товары для кухни
                         </button>
-                        <ul class="dropdown-kitchen dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Холодильники</a></li>
                             <li><a class="dropdown-item" href="#">Микроволновки</a></li>
                             <li><a class="dropdown-item" href="#">Плиты</a></li>
@@ -57,11 +56,11 @@
                         </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Посуда
                         </button>
-                        <ul class="dropdown-dishes dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Сквороды</a></li>
                             <li><a class="dropdown-item" href="#">Кастрюли</a></li>
                             <li><a class="dropdown-item" href="#">Кухонные принадлежности</a></li>
@@ -69,11 +68,11 @@
                         </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Техника для дома
                         </button>
-                        <ul class="dropdown-forhome dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Пылесос</a></li>
                             <li><a class="dropdown-item" href="#">Стиральные машины</a></li>
                             <li><a class="dropdown-item" href="#">Утюги</a></li>
@@ -83,11 +82,11 @@
                         </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Красота и здоровье
                         </button>
-                        <ul class="dropdown-health dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Весы</a></li>
                             <li><a class="dropdown-item" href="#">Электробритвы</a></li>
                             <li><a class="dropdown-item" href="#">Фены</a></li>
@@ -95,11 +94,11 @@
                         </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Инструменты
                         </button>
-                        <ul class="dropdown-instruments dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Дрели</a></li>
                             <li><a class="dropdown-item" href="#">Перфораторы</a></li>
                             <li><a class="dropdown-item" href="#">Шлифовальные машины</a></li>
@@ -108,11 +107,11 @@
                         </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-secondary dropdown-toggle"
+                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Прочее
                         </button>
-                        <ul class="dropdown-another dropdown-menu">
+                        <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Лампы</a></li>
                             <li><a class="dropdown-item" href="#">Фонари</a></li>
                             <li><a class="dropdown-item" href="#">Батарейки, зарядные устройства</a></li>
@@ -141,9 +140,11 @@
 
     <div class="section">
         <div class="container px-4 px-lg-5 my-5">
-            <p class="like mb-3">
-                Вам может понравиться
-            </p>
+            <a name="hits">
+                <p class="like mb-3" name="hits">
+                    Хиты продаж
+                </p>
+            </a>
             <div class="row">
                 {% for product_image in products_images %}
                 <div class="col-lg-3">
@@ -159,7 +160,8 @@
                         </a>
                         <p style="font-weight: 700; font-size: 18px;">{{ product_image.product.price }} ₸</p>
                         <div class="add-to-cart-btn">
-                            <button class="btn btn-outline-success"> В КОРЗИНУ</button>
+                            <a class="qwe" href="{% url 'product' product_image.product.id %}"> <button
+                                    class="btn btn-success">КУПИТЬ </button> </a>
                         </div>
                     </div>
                 </div>
@@ -168,6 +170,10 @@
         </div>
     </div>
     {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 
 </html>

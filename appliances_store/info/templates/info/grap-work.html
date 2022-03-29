@@ -1,0 +1,94 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+
+{% block content%}
+
+<div class="container py-2">
+    <div class="container px-4 px-lg-5 my-5 ms-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                    style="font-weight: 600;" aria-expanded="false">
+                    Все категории
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item mt-2" href="{% url 'for-kitchen' %}">Товары для кухни</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'dishes' %}">Посуда</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'tec-for-home' %}">Техника для дома</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'health-and-beauty' %}">Красота и здоровье</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'instruments' %}">Инструменты</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'other' %}">Прочее</a></li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="delivery me-3" href="{% url 'delivery' %}"> Доставка </a>
+                        <a class="payment me-3" href="{% url 'payment' %}">Оплата</a>
+                        <a class="graph-work me-3" href="{% url 'graph-work' %}">График работы</a>
+                        <a class="hits me-3" href="/#hits">Хиты продаж</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <table class="table ">
+        <thead>
+            <tr>
+                <th scope="col">Адрес магазинов</th>
+                <th scope="col">График работы</th>
+                <th scope="col">Контакты</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>МФК «Рамстор ALL IN»<br>
+                    пр. Назарбаева, 226</td>
+                <td>10:00-22:00</td>
+                <td>+ 7 708 164 76 80</td>
+            </tr>
+            <tr>
+                <td>ТРЦ «Almaty Mall»<br>
+                    ул. Жандосова, 83</td>
+                <td>10:00-22:00</td>
+                <td>+ 7 708 164 76 80</td>
+
+            </tr>
+            <tr>
+                <td>Пункт выдачи ОРПТ<br>
+                    пр. Суюнбая, 481з</td>
+                <td>9:00-18:00</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ТРЦ «MART» Алматы<br>
+                    ул. Рихарда Зорге, 18/4</td>
+                <td>10:00-22:00</td>
+                <td>+ 7 708 164 76 80</td>
+            </tr>
+            <tr>
+                <td>ТРК «Mega Center Alma-Ata»<br>
+                    ​ул. Розыбакиева, 247а</td>
+                <td>10:00-22:00</td>
+                <td>+ 7 708 164 76 80</td>
+            </tr>
+            <tr>
+                <td>ТРЦ «MEGA Park»<br>
+                    ул. Макатаева, 127/1</td>
+                <td>10:00-22:00</td>
+                <td>+ 7 708 164 76 80</td>
+            </tr>
+            <tr>
+                <td>Пункт выдачи Сейфуллина<br>
+                    ул. Сейфуллина, 171</td>
+                <td>10:00-20:00</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="py-4"></div>
+</div>
+{% endblock %}
