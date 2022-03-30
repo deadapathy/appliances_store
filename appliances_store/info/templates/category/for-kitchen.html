@@ -11,10 +11,13 @@
 <div class="container py-2">
     <div class="container px-4 px-lg-5 my-5 ms-5">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="btn-group">
-                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                    style="font-weight: 600;" aria-expanded="false">
-                    Все категории
+            <div class="btn-group" style="width: 200px;">
+                <a href="{% url 'category' %}"><button type="button" class="btn btn-success" style="font-weight: 600;"
+                        aria-expanded="false">Все
+                        категории</button></a>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item mt-2" href="{% url 'for-kitchen' %}">Товары для кухни</a></li>
@@ -40,7 +43,7 @@
     </div>
     <div class="row justify-content-md-center">
         <div class="col-md-auto ms-4">
-            <a href="#">
+            <a href="{% url 'refrigerators' %}">
                 <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
                     <img src="{% static 'img\for-kitchen\1kholodilnik.jpg' %}" class="card-img-top mt-2" alt="..."
                         width="150" height="150">
@@ -51,7 +54,7 @@
             </a>
         </div>
         <div class="col-md-auto ms-4">
-            <a href="#">
+            <a href="{% url 'plates' %}">
                 <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
                     <img src="{% static 'img\for-kitchen\1plity.jpg' %}" class="card-img-top mt-2" alt="..." width="150"
                         height="150">
@@ -62,7 +65,7 @@
             </a>
         </div>
         <div class="col-md-auto ms-4">
-            <a href="#">
+            <a href="{% url 'microwave' %}">
                 <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
                     <img src="{% static 'img\for-kitchen\1mikrovolnovka_2.jpg' %}" class="card-img-top mt-2" alt="..."
                         width="150" height="150">
@@ -76,7 +79,7 @@
 
     <div class="row justify-content-md-center py-5">
         <div class="col-md-auto ms-4">
-            <a href="#">
+            <a href="{% url 'teapot' %}">
                 <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
                     <img src="{% static 'img\for-kitchen\1chaynik.jpg' %}" class="card-img-top mt-2" alt="..."
                         width="150" height="150">
@@ -87,7 +90,7 @@
             </a>
         </div>
         <div class="col-md-auto ms-4">
-            <a href="#">
+            <a href="{% url 'coffeMachine' %}">
                 <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
                     <img src="{% static 'img\for-kitchen\1kofevarnki.jpg' %}" class="card-img-top mt-2" alt="..."
                         width="150" height="150">

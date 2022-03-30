@@ -6,10 +6,13 @@
 <div class="container py-2">
     <div class="container px-4 px-lg-5 my-5 ms-5">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="btn-group">
-                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
-                    style="font-weight: 600;" aria-expanded="false">
-                    Все категории
+            <div class="btn-group" style="width: 200px;">
+                <a href="{% url 'category' %}"><button type="button" class="btn btn-success" style="font-weight: 600;"
+                        aria-expanded="false">Все
+                        категории</button></a>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item mt-2" href="{% url 'for-kitchen' %}">Товары для кухни</a></li>
@@ -55,14 +58,16 @@
             <br>
             <i class="bi bi-credit-card-2-front"></i>
             <b> Оплата платежной картой.
-            При проведении оплаты платёжными картами используется система CloudPayments. Для оплаты требуется ввести
-            данные карты (номер, CVC/СVV код, срок действия) в защищенном виджете платежной системы. Для дополнительной
-            безопасности используется технология 3-D Secure. Если Ваш Банк-эмитент поддерживает данную технологию, Вы
-            будете перенаправлены на его сервер для прохождения дополнительной идентификации.</b>
+                При проведении оплаты платёжными картами используется система CloudPayments. Для оплаты требуется ввести
+                данные карты (номер, CVC/СVV код, срок действия) в защищенном виджете платежной системы. Для
+                дополнительной
+                безопасности используется технология 3-D Secure. Если Ваш Банк-эмитент поддерживает данную технологию,
+                Вы
+                будете перенаправлены на его сервер для прохождения дополнительной идентификации.</b>
         </div>
     </div>
     <div class="py-5"></div>
     <div class="py-1"></div>
-    
+
 </div>
 {% endblock %}

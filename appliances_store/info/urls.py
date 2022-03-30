@@ -23,5 +23,9 @@ urlpatterns = [
     path('delivery', views.delivery, name="delivery"),
     path('payment', views.payment, name="payment"),
     path('graph-work', views.grap_work, name="graph-work"),
-
+    path('refrigerators', views.refrigerators, name="refrigerators"),
+    path('plates', views.plates, name="plates"),
+    path('microwave', views.microwave, name="microwave"),
+    path('teapot', views.teapot, name="teapot"),
+    path('coffeMachine', views.coffeMachine, name="coffeMachine"),
 ]

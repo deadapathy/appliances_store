@@ -46,6 +46,7 @@
                   {% endif %}
                 </span>
               </a>
+
               <div class="basket-items bg-white d-none">{% csrf_token %}
                 <ul class="">
                   {% for product_in_basket in products_in_basket %}
@@ -53,6 +54,7 @@
                     {{ product_in_basket.product.name }} {{ product_in_basket.nmb }} шт.
                     за {{ product_in_basket.price_per_item }} ₸.
                     <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}">x</a>
+
                   </li>
                   {% endfor %}
                   <li>

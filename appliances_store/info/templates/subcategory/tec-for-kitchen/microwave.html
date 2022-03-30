@@ -1,0 +1,71 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+
+{% block content%}
+<div class="container py-2">
+    <div class="container px-4 px-lg-5 my-5 ms-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="btn-group" style="width: 200px;">
+                <a href="{% url 'category' %}"><button type="button" class="btn btn-success" style="font-weight: 600;"
+                        aria-expanded="false">Все
+                        категории</button></a>
+                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item mt-2" href="{% url 'for-kitchen' %}">Товары для кухни</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'dishes' %}">Посуда</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'tec-for-home' %}">Техника для дома</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'health-and-beauty' %}">Красота и здоровье</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'instruments' %}">Инструменты</a></li>
+                    <li><a class="dropdown-item mt-2" href="{% url 'other' %}">Прочее</a></li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+
+                <div class="collapse navbar-collapse ms-4" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="delivery me-3" href="{% url 'delivery' %}"> Доставка </a>
+                        <a class="payment me-3" href="{% url 'payment' %}">Оплата</a>
+                        <a class="graph-work me-3" href="{% url 'graph-work' %}">График работы</a>
+                        <a class="hits me-3" href="/#hits">Хиты продаж</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container px-4 px-lg-5">
+        <a name="hits">
+            <p class="like mb-3" name="hits">
+                Микроволновые печи
+            </p>
+        </a>
+        <div class="row">
+            {% for product_image in products_images_microwave %}
+            <div class="col-lg-4">
+                <div class="product-item mt-3" style="height: 510px;">
+                    <br>
+                    <a href="{% url 'product' product_image.product.id %}">
+                        <div>
+                            <img src="{{ product_image.image.url }}" class="img-responsive">
+                        </div>
+                        <h5 class="product-name">{{ product_image.product.name }}</h5>
+                    </a>
+                    <p style="font-weight: 700; font-size: 18px;">{{ product_image.product.price }} ₸</p>
+                    <div class="add-to-cart-btn ms-4">
+                        <a class="qwe" href="{% url 'product' product_image.product.id %}"> <button
+                                class="btn btn-success">КУПИТЬ </button> </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="py-5"></div>
+{% endblock %}

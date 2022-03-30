@@ -1,6 +1,8 @@
+from datetime import date
 from email import header
 from math import prod
 from re import template
+from threading import local
 from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
@@ -9,7 +11,8 @@ from .models import *
 
 
 def home(request):
-    products_images = ProductImage.objects.filter(is_active=True, is_main=True)
+    products_images = ProductImage.objects.filter(product__category__id=1)
+    products_images2 = ProductImage.objects.filter(product__category__id=2)
     # products_images_plates = products_images.filter(product__category__id=1)
     return render(request, 'info/index.html', locals())
 
@@ -55,6 +58,7 @@ def product(request, product_id):
 
 
 def basket_adding(request):
+    
     return_dict = dict()
     session_key = request.session.session_key
     print (request.POST)
@@ -76,6 +80,7 @@ def basket_adding(request):
     #common code for 2 cases
     products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True, order__isnull=True)
     products_total_nmb = products_in_basket.count()
+    
     return_dict["products_total_nmb"] = products_total_nmb
 
     return_dict["products"] = list()
@@ -94,3 +99,23 @@ def checkout(request):
     session_key = request.session.session_key
     products_in_basket = ProductInBasket.objects.filter(session_key=session_key, is_active=True)
     return render(request, 'products/checkout.html', locals())
+
+def refrigerators(request):
+    products_images_refrigerators = ProductImage.objects.filter(product__category__id=3)
+    return render(request, 'subcategory/tec-for-kitchen/refrigerators.html', locals())
+
+def plates(request):
+    products_images_plates = ProductImage.objects.filter(product__category__id=4)
+    return render(request, 'subcategory/tec-for-kitchen/plates.html', locals())
+
+def microwave(request):
+    products_images_microwave = ProductImage.objects.filter(product__category__id=5)
+    return render(request, 'subcategory/tec-for-kitchen/microwave.html', locals())
+
+def teapot(request):
+    products_images_teapot = ProductImage.objects.filter(product__category__id=6)
+    return render(request, 'subcategory/tec-for-kitchen/teapot.html', locals())
+
+def coffeMachine(request):
+    products_images_coffeMachine = ProductImage.objects.filter(product__category__id=7)
+    return render(request, 'subcategory/tec-for-kitchen/coffeMachine.html', locals())

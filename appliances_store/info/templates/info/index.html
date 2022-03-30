@@ -48,11 +48,11 @@
                             Товары для кухни
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Холодильники</a></li>
-                            <li><a class="dropdown-item" href="#">Микроволновки</a></li>
-                            <li><a class="dropdown-item" href="#">Плиты</a></li>
-                            <li><a class="dropdown-item" href="#">Чайники</a></li>
-                            <li><a class="dropdown-item" href="#">Кофеварки</a></li>
+                            <li><a class="dropdown-item" href="{% url 'refrigerators' %}">Холодильники</a></li>
+                            <li><a class="dropdown-item" href="{% url 'microwave' %}">Микроволновки</a></li>
+                            <li><a class="dropdown-item" href="{% url 'plates' %}">Плиты</a></li>
+                            <li><a class="dropdown-item" href="{% url 'teapot' %}">Чайники</a></li>
+                            <li><a class="dropdown-item" href="{% url 'coffeMachine' %}">Кофеварки</a></li>
                         </ul>
                     </div>
                     <div class="btn-group dropend">
@@ -166,9 +166,30 @@
                     </div>
                 </div>
                 {% endfor %}
+                {% for product_image2 in products_images2 %}
+                <div class="col-lg-3">
+                    <div class="product-item mt-3">
+                        <br>
+                        <a href="{% url 'product' product_image2.product.id %}">
+                            <div>
+                                <img src="{{ product_image2.image.url }}" class="img-responsive">
+                            </div>
+                            <br>
+                            <br>
+                            <h5 class="product-name">{{ product_image2.product.name }}</h5>
+                        </a>
+                        <p style="font-weight: 700; font-size: 18px;">{{ product_image2.product.price }} ₸</p>
+                        <div class="add-to-cart-btn">
+                            <a class="qwe" href="{% url 'product' product_image2.product.id %}"> <button
+                                    class="btn btn-success">КУПИТЬ </button> </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+    <div class="py-5"></div>
     {% endblock %}
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
