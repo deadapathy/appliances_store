@@ -1,6 +1,5 @@
 from atexit import register
 from unicodedata import name
-from click import ParamType
 from django.urls import path, include, re_path
 from .views import *
 from . import views
@@ -28,4 +27,8 @@ urlpatterns = [
     path('microwave', views.microwave, name="microwave"),
     path('teapot', views.teapot, name="teapot"),
     path('coffeMachine', views.coffeMachine, name="coffeMachine"),
+    path('pans', views.pans, name="pans"),
+    path('pots', views.pots, name="pots"),
+    path('serving', views.serving, name="serving"),
+    path('kitchenware', views.kitchenware, name="kitchenware"),
 ]

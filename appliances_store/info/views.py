@@ -119,3 +119,19 @@ def teapot(request):
 def coffeMachine(request):
     products_images_coffeMachine = ProductImage.objects.filter(product__category__id=7)
     return render(request, 'subcategory/tec-for-kitchen/coffeMachine.html', locals())
+
+def pans(request):
+    products_images_pans = ProductImage.objects.filter(product__category__id=8)
+    return render(request, 'subcategory/dishes/pans.html', locals())
+
+def pots(request):
+    products_images_pots = ProductImage.objects.filter(product__category__id=9)
+    return render(request, 'subcategory/dishes/pots.html', locals())
+
+def serving(request):
+    products_images_serving = ProductImage.objects.filter(product__category__id=10)
+    return render(request, 'subcategory/dishes/serving.html', locals())
+
+def kitchenware(request):
+    products_images_kitchenware = ProductImage.objects.filter(product__category__id=11)
+    return render(request, 'subcategory/dishes/kitchenware.html', locals())

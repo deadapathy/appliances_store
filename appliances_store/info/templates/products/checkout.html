@@ -27,7 +27,7 @@
                         </li>
                         {% endfor %}
                         <div class="text-right py-2 ms-2">
-                            <h6 class=""> Общая стоимость: <span class="ms-3" id="total_order_amount"></span></h6>
+                            <h6 class=""> Общая стоимость: <span class="ms-3" id="total_order_amount"></span> ₸</h6>
                         </div>
                     </ul>
                 </div>
@@ -116,13 +116,13 @@
                             <div class="col-md-6">
                                 <label for="cc-name" class="form-label">Имя на карте</label>
                                 <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                                
+
                             </div>
 
                             <div class="col-md-6">
                                 <label for="cc-number" class="form-label">Номер карты</label>
                                 <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                               
+
                             </div>
 
                             <div class="col-md-3">
@@ -145,7 +145,26 @@
                         <button class="w-100 btn btn-success btn-lg" type="submit" data-bs-toggle="modal"
                             data-bs-target="#exampleModal"> Оформить
                             заказ</button>
-
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div id="myModal" class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Спасибо за заказ!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        В ближайшее время наши операторы свяжутся с вами.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="/"> <button type="button" class="btn btn-success">Перейти на
+                                                главную</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="py-5"></div>
                     </form>
                 </div>
