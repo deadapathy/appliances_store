@@ -135,3 +135,19 @@ def serving(request):
 def kitchenware(request):
     products_images_kitchenware = ProductImage.objects.filter(product__category__id=11)
     return render(request, 'subcategory/dishes/kitchenware.html', locals())
+
+def vacuum(request):
+    products_images_vacuum = ProductImage.objects.filter(product__category__id=12)
+    return render(request, 'subcategory/tec-for-home/vacuum.html', locals())
+
+def washing_machines(request):
+    products_images_washing_machines = ProductImage.objects.filter(product__category__id=13)
+    return render(request, 'subcategory/tec-for-home/washing_machines.html', locals())
+
+def irons(request):
+    products_images_irons = ProductImage.objects.filter(product__category__id=14)
+    return render(request, 'subcategory/tec-for-home/irons.html', locals())
+
+def telephones(request):
+    products_images_telephones = ProductImage.objects.filter(product__category__id=15)
+    return render(request, 'subcategory/tec-for-home/telephones.html', locals())

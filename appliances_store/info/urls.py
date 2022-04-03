@@ -31,4 +31,8 @@ urlpatterns = [
     path('pots', views.pots, name="pots"),
     path('serving', views.serving, name="serving"),
     path('kitchenware', views.kitchenware, name="kitchenware"),
+    path('vacuum', views.vacuum, name="vacuum"),
+    path('washing_machines', views.washing_machines, name="washing_machines"),
+    path('irons', views.irons, name="irons"),
+    path('telephones', views.telephones, name="telephones"),
 ]

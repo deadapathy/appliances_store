@@ -73,12 +73,10 @@
                             Техника для дома
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Пылесос</a></li>
-                            <li><a class="dropdown-item" href="#">Стиральные машины</a></li>
-                            <li><a class="dropdown-item" href="#">Утюги</a></li>
-                            <li><a class="dropdown-item" href="#">Телефоны</a></li>
-                            <li><a class="dropdown-item" href="#">Водонагреватели</a></li>
-                            <li><a class="dropdown-item" href="#">Уход за одеждой</a></li>
+                            <li><a class="dropdown-item" href="{% url 'vacuum' %}">Пылесосы</a></li>
+                            <li><a class="dropdown-item" href="{% url 'washing_machines' %}">Стиральные машины</a></li>
+                            <li><a class="dropdown-item" href="{% url 'irons' %}">Утюги</a></li>
+                            <li><a class="dropdown-item" href="{% url 'telephones' %}">Телефоны</a></li>
                         </ul>
                     </div>
                     <div class="btn-group dropend">
