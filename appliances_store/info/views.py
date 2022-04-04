@@ -151,3 +151,7 @@ def irons(request):
 def telephones(request):
     products_images_telephones = ProductImage.objects.filter(product__category__id=15)
     return render(request, 'subcategory/tec-for-home/telephones.html', locals())
+
+def scales(request):
+    products_images_scales = ProductImage.objects.filter(product__category__id=16)
+    return render(request, 'subcategory/h&b/scales.html', locals())

@@ -35,4 +35,5 @@ urlpatterns = [
     path('washing_machines', views.washing_machines, name="washing_machines"),
     path('irons', views.irons, name="irons"),
     path('telephones', views.telephones, name="telephones"),
+    path('scales', views.scales, name="scales"),
 ]
