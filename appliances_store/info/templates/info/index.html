@@ -86,35 +86,27 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'scales' %}">Весы</a></li>
-                            <li><a class="dropdown-item" href="#">Электробритвы</a></li>
-                            <li><a class="dropdown-item" href="#">Фены</a></li>
-                            <li><a class="dropdown-item" href="#">Уход за полостью рта</a></li>
+                            <li><a class="dropdown-item" href="{% url 'electric_shaver' %}">Электробритвы</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hairdryers' %}">Фены</a></li>
+                            <li><a class="dropdown-item" href="{% url 'trimmers' %}">Триммеры</a></li>
                         </ul>
                     </div>
+
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Категория ещё не настроена"
+                            class="btn-kitchen btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Инструменты
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Дрели</a></li>
-                            <li><a class="dropdown-item" href="#">Перфораторы</a></li>
-                            <li><a class="dropdown-item" href="#">Шлифовальные машины</a></li>
-                            <li><a class="dropdown-item" href="#">Электролобзики, пилы</a></li>
-                            <li><a class="dropdown-item" href="#">Инструменты</a></li>
-                        </ul>
                     </div>
                     <div class="btn-group dropend">
-                        <button type="button" class="btn-kitchen btn btn-outline-success dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button type="button" data-bs-toggle="tooltip" data-bs-placement="top"
+                            title="Категория ещё не настроена"
+                            class="btn-kitchen btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Прочее
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Лампы</a></li>
-                            <li><a class="dropdown-item" href="#">Фонари</a></li>
-                            <li><a class="dropdown-item" href="#">Батарейки, зарядные устройства</a></li>
-                            <li><a class="dropdown-item" href="#">Чистящие средства</a></li>
-                        </ul>
                     </div>
                 </div>
 
@@ -158,7 +150,7 @@
                         </a>
                         <p style="font-weight: 700; font-size: 18px;">{{ product_image.product.price }} ₸</p>
                         <div class="add-to-cart-btn">
-                            <a class="qwe" href="{% url 'product' product_image.product.id %}"> <button
+                            <a href="{% url 'product' product_image.product.id %}"> <button
                                     class="btn btn-success">КУПИТЬ </button> </a>
                         </div>
                     </div>

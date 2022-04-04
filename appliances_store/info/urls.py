@@ -36,4 +36,7 @@ urlpatterns = [
     path('irons', views.irons, name="irons"),
     path('telephones', views.telephones, name="telephones"),
     path('scales', views.scales, name="scales"),
+    path('electric_shaver', views.electric_shaver, name="electric_shaver"),
+    path('hairdryers', views.hairdryers, name="hairdryers"),
+    path('trimmers', views.trimmers, name="trimmers"),
 ]

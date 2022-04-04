@@ -155,3 +155,15 @@ def telephones(request):
 def scales(request):
     products_images_scales = ProductImage.objects.filter(product__category__id=16)
     return render(request, 'subcategory/h&b/scales.html', locals())
+
+def electric_shaver(request):
+    products_images_electric_shaver = ProductImage.objects.filter(product__category__id=17)
+    return render(request, 'subcategory/h&b/electric_shaver.html', locals())
+
+def hairdryers(request):
+    products_images_hairdryers = ProductImage.objects.filter(product__category__id=18)
+    return render(request, 'subcategory/h&b/hairdryers.html', locals())
+
+def trimmers(request):
+    products_images_trimmers = ProductImage.objects.filter(product__category__id=19)
+    return render(request, 'subcategory/h&b/trimmers.html', locals())

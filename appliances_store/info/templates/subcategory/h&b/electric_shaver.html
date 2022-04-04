@@ -3,12 +3,6 @@
 
 
 {% block content%}
-<style>
-    body {
-        background-color: white;
-    }
-</style>
-
 <div class="container py-2">
     <div class="container px-4 px-lg-5 my-5 ms-5">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -42,56 +36,36 @@
             </div>
         </nav>
     </div>
-    <div class="row justify-content-md-center">
-        <div class="col-md-auto ms-4">
-            <a href="{% url 'scales' %}">
-                <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
-                    <img src="{% static 'img\healt&beauty\1vesy.jpg' %}" class="card-img-top mt-4" alt="..." width="150"
-                        height="150">
-                    <div class="card-body">
-                        <h5 class=" text-center">Весы</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-auto ms-4">
-            <a href="{% url 'electric_shaver' %}">
-                <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
-                    <img src="{% static 'img\healt&beauty\1britvy.jpg' %}" class="card-img-top mt-4"
-                        alt="..." width="150" height="150">
-                    <div class="card-body">
-                        <h5 class="text-center">Электробритвы</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-auto ms-4">
-            <a href="{% url 'hairdryers' %}">
-                <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
-                    <img src="{% static 'img\healt&beauty\1feny.jpg' %}" class="card-img-top mt-4" alt="..."
-                        width="150" height="150">
-                    <div class="card-body">
-                        <h5 class=" text-center">Фены</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-auto ms-4">
-            <a href="{% url 'trimmers' %}">
-                <div class="card" style="width: 14rem; border: 2px solid #f7f7f7;">
-                    <img src="{% static 'img\healt&beauty\trim.jpg' %}" class="card-img-top mt-4" alt="..."
-                        width="150" height="150">
-                    <div class="card-body">
-                        <h5 class="text-center">Триммеры</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <div class="py-5"></div>
-
 </div>
 
-
+<div class="section">
+    <div class="container px-4 px-lg-5">
+        <a name="hits">
+            <p class="like mb-3" name="hits">
+                Электробритвы
+            </p>
+        </a>
+        <div class="row">
+            {% for product_image in products_images_electric_shaver %}
+            <div class="col-lg-4">
+                <div class="product-item mt-3" style="height: 530px;">
+                    <br>
+                    <a href="{% url 'product' product_image.product.id %}">
+                        <div>
+                            <img src="{{ product_image.image.url }}" class="img-responsive">
+                        </div>
+                        <h5 class="product-name">{{ product_image.product.name }}</h5>
+                    </a>
+                    <p style="font-weight: 700; font-size: 18px;">{{ product_image.product.price }} ₸</p>
+                    <div class="add-to-cart-btn ms-4">
+                        <a class="qwe" href="{% url 'product' product_image.product.id %}"> <button
+                                class="btn btn-success">КУПИТЬ </button> </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="py-5"></div>
 {% endblock %}
