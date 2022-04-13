@@ -1,3 +1,4 @@
+from dataclasses import field
 from django.contrib import admin
 
 from .models import *
@@ -17,26 +18,25 @@ class ProductImageInline(admin.TabularInline):
 
 class ProductCategoryAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ProductCategory._meta.fields]
-
     class Meta:
         model = ProductCategory
 
 admin.site.register(ProductCategory, ProductCategoryAdmin)
 
 
-class ProductAdmin (admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Product._meta.fields]
     inlines = [ProductImageInline]
-
+    search_fields = ('name', 'price')
     class Meta:
         model = Product
 
 admin.site.register(Product, ProductAdmin)
 
 
-class ProductImageAdmin (admin.ModelAdmin):
+class ProductImageAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ProductImage._meta.fields]
-
+    list_filter = ('is_active', 'is_main')
     class Meta:
         model = ProductImage
 
